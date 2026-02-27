@@ -6,10 +6,10 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Shader;
 
-public class Bullet {
+public class Enemy {
     public int x, y, width, height, speed, color;
 
-    public Bullet(int x, int y, int width, int height, int speed, int color) {
+    public Enemy(int x, int y, int width, int height, int speed, int color) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -19,7 +19,7 @@ public class Bullet {
     }
 
     public void update() {
-        y -= speed;
+        y += speed;
     }
 
     public Rect getRect() {
@@ -28,7 +28,7 @@ public class Bullet {
 
     public void draw(Canvas canvas, Paint paint) {
         // Gradient
-        paint.setShader(new LinearGradient(x, y, x, y + height, color, 0xFFFFFF00, Shader.TileMode.CLAMP));
+        paint.setShader(new LinearGradient(x, y, x, y + height, color, 0xFF000000, Shader.TileMode.CLAMP));
         canvas.drawRect(x, y, x + width, y + height, paint);
         paint.setShader(null);
     }
