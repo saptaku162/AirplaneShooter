@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@android:drawable/ic_dialog_info"
         android:label="Airplane Shooter"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
